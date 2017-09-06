@@ -14,6 +14,8 @@ AWESOMENESS = [
     'smashing', 'lovely',
 ]
 
+templates = ["madlib.html", "madlib1.html", "madlib2.html"]
+
 
 @app.route('/')
 def start_here():
@@ -55,9 +57,11 @@ def show_madlib():
     color = request.args.get("color")
     noun = request.args.get("noun")
     adj = request.args.get("adj")
+    animal = request.args.get("animal")
+    foods = request.args.getlist("foods")
 
-    return render_template("madlib.html",
-                           person=person, color=color, noun=noun, adj=adj)
+    return render_template(choice(templates),
+                           person=person, color=color, noun=noun, adj=adj, animal=animal, foods=foods)
 
 
 if __name__ == '__main__':

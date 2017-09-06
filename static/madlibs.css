@@ -1,0 +1,12 @@
+div {
+    background-color: #f8cfa9;
+    border: 5px solid purple;
+    font-family: serif;
+    font-size: 50px;
+}
+
+p {
+    margin-left: 5px;
+    padding: 10px;
+    text-align: center;
+}
