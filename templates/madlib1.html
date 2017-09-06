@@ -1,18 +1,14 @@
-<!doctype html>
-<html>
 
-<head>
-  <title>A Madlib</title>
-  <link rel="stylesheet" type= "text/css" href= "/static/madlibs.css">
-</head>
-<body>
-    <div>
-    <p>{{ person }} just told me it was spring! And I am so {{ adj }} that I could burst!
+{% extends "base.html" %}
+{% block title %}Madlib 1 {% endblock %}
+
+{% block content %}
+
+{{ person }} just told me it was spring! And I am so {{ adj }} that I could burst!
 Some of my favorite foods to eat in spring are
 {% for food in foods %}
-{{ food }},
-{% endfor %}
-and covfefe. The weather is so nice in spring and the {{ color }} {{ noun }}s are in full bloom! The {{ animal }}s like to eat them though. </p>
-</div>
-</body>
-</html>
+{{ food }}
+{{ " and " if not loop.last }}
+{% endfor %}. The weather is so nice in spring and the {{ color }} {{ noun }}s are in full bloom! The {{ animal }}s like to eat them though.
+
+{% endblock %}

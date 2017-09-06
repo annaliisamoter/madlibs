@@ -1,18 +1,14 @@
-<!doctype html>
-<html>
 
-<head>
-  <title>A Madlib</title>
-  <link rel="stylesheet" type= "text/css" href= "/static/madlibs.css">
-</head>
-<body>
-    <div>
-    <p>There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab.
-When {{ person }} riding on a {{ animal }} went to pick it up, it burst into flames in a totally {{ adj }} way. {{ person }} and the {{ animal }} consoled themselves by eating a bunch of
+{% extends "base.html" %}
+{% block title %}Madlib 1 {% endblock %}
+
+{% block content %}
+
+There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab.
+When {{ person }}, riding on a {{ animal }} went to pick it up, it burst into flames in a totally {{ adj }} way. {{ person }} and the {{ animal }} consoled themselves by eating a bunch of
 {% for food in foods %}
-{{ food }},
-{% endfor %}
-and covfefe. </p>
-</div>
-</body>
-</html>
+{{ food }}
+{{ " and " if not loop.last }}
+{% endfor %}.
+
+{% endblock %}

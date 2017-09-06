@@ -1,17 +1,14 @@
-<!doctype html>
-<html>
 
-<head>
-  <title>A Madlib</title>
-  <link rel="stylesheet" type= "text/css" href= "/static/madlibs.css">
-</head>
-<body>
-    <div>
-    <p> On the {{ adj }} trip to Hackbright,my friend {{ person }} and I stopped because we saw a {{ animal }} by the side of the road. We noticed it was an unusual shade of {{ color }}. After making sure the {{ animal }} was okay, we picked up some
+{% extends "base.html" %}
+{% block title %}Madlib 1 {% endblock %}
+
+{% block content %}
+
+On the {{ adj }} trip to Hackbright, my friend {{ person }} and I stopped because we saw a {{ animal }} by the side of the road. We noticed it was an unusual shade of {{ color }}. After making sure the {{ animal }} was okay, we picked up some
 {% for food in foods %}
-{{ food }},
+{{ food }}
+{{ " and " if not loop.last }}
 {% endfor %}
-and covfefe for lunch. The weather is so nice in spring and the {{ noun }}s are in full bloom! </p>
-</div>
-</body>
-</html>
+for lunch. The weather is so nice in spring and the {{ noun }}s are in full bloom!
+
+{% endblock %}

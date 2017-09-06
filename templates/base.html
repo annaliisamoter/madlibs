@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>{% block title %}TITLE GOES HERE {% endblock %}</title>
+  <link rel="stylesheet" type= "text/css" href= "/static/madlibs.css">
+        <style>
+            img {
+                width:100%;
+            }
+        </style>
+</head>
+<body>
+    <img src="http://is1.mzstatic.com/image/thumb/Purple122/v4/2d/59/b1/2d59b1ad-672f-08b3-12e6-4dd74e2b4815/source/1200x630bb.jpg" alt="madlib banner" width="300" height="600">
+    <div>
+        <p>
+           {% block content %}BODY CONTENT GOES HERE {% endblock %}
+        </p>
+    </div>
+</body>
+</html>
